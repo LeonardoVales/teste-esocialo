@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('layouts.layout-principal');
 // });
 
-Route::get('/contatos', 'ContatoController@index')->name('lista-contatos');
-ROute::get('/contato/contato-create', 'ContatoController@create')->name('novo-contato');
+Route::get('/', 'ContatoController@index')->name('lista-contatos');
+Route::get('/contato-create', 'ContatoController@create')->name('novo-contato');
+Route::post('/contato-save', 'ContatoController@save')->name('save-contato');

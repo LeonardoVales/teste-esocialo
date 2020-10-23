@@ -34,24 +34,25 @@
                           </tr>
                         </thead>
                         <tbody>
+                        @foreach($contatos as $contato)
                           <tr>
-                            <td>Leonardo</td>
-                            <td>leohenrique.vales</td>
-                            <td>31865251</td>
+                            <td>{{$contato->nome}}</td>
+                            <td>{{$contato->email}}</td>
+                            <td>{{$contato->telefone}}</td>
                             <td class="text-right">
-                                <a href="#" title="Visualizar mensagem" class="btn btn-info m-b-10">
+                                <a href="#" title="Visualizar mensagem" class="btn btn-info btn-sm m-b-10">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="#" title="Editar contato" class="btn btn-success">
+                                <a href="#" title="Editar contato" class="btn btn-sm btn-success">
                                     <i class="fas fa-edit"></i>
                                 </a>
 
-                                <a href="#" title="Excluir contato" class="delete-link btn btn-danger">
+                                <a href="#" title="Excluir contato" class="delete-link btn-sm btn btn-danger">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                             </td>
                           </tr>
-
+                        @endforeach
                         </tbody>
                       </table>
                 </div>
