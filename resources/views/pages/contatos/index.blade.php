@@ -21,7 +21,7 @@
     </div>
 
     <div class="row">
-        <div class="col-12">
+        <div class="col-12" style="margin-top: 20">
             <div class="card">
                 <div class="card-body">
                     <table class="table table-striped">
@@ -43,11 +43,11 @@
                                 <a href="#" title="Visualizar mensagem" class="btn btn-info btn-sm m-b-10">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="#" title="Editar contato" class="btn btn-sm btn-success">
+                                <a href="{{route('show-contato', ['id_contato' => $contato->id])}}" title="Editar contato" class="btn btn-sm btn-success">
                                     <i class="fas fa-edit"></i>
                                 </a>
 
-                                <a href="#" title="Excluir contato" class="delete-link btn-sm btn btn-danger">
+                                <a href="{{route('delete-contato', ['id_contato' => $contato->id])}}" title="Excluir contato" class="delete-link btn-sm btn btn-danger">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                             </td>

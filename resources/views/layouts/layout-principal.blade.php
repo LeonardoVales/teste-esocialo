@@ -15,6 +15,7 @@
 <body>
 
     <div class="container" style="margin-top: 20px">
+        @include('layouts.flash-message')
         @yield('content')
     </div>
 

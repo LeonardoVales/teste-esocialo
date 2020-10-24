@@ -21,4 +21,13 @@ $(document).ready(function () {
         });
     });
 
+    console.log('asdfdasdf');
+    if (document.getElementById('alert'))  {
+
+        setTimeout(() => {
+            $("#alert").hide('slow')
+        }, 3000);
+    }
+
+
 });
