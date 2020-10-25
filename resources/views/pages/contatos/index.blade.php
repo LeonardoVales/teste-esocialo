@@ -40,7 +40,7 @@
                             <td>{{$contato->email}}</td>
                             <td>{{$contato->telefone}}</td>
                             <td class="text-right">
-                                <a href="#" title="Visualizar mensagem" class="btn btn-info btn-sm m-b-10">
+                                <a href="#" data-toggle="modal" title="Visualizar contato" data-target="#contato_{{$contato->id}}" class="btn btn-info btn-sm m-b-10">
                                     <i class="fas fa-eye"></i>
                                 </a>
                                 <a href="{{route('show-contato', ['id_contato' => $contato->id])}}" title="Editar contato" class="btn btn-sm btn-success">
@@ -52,6 +52,33 @@
                                 </a>
                             </td>
                           </tr>
+
+                        <div id="contato_{{$contato->id}}" class="modal fade" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="modal-title">
+                                            <dt>Contato enviado em {{date('d/m/Y H:i:s', strtotime($contato->created_at))}}</dt>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <dl><strong>Nome: </strong>{{$contato->nome}}</dl>
+                                                <dl><strong>E-mail: </strong>{{$contato->email}}</dl>
+                                                <dl><strong>Telefone: </strong>{{$contato->telefone}}</dl>
+                                                <dl><strong>Mensagem: </strong>{{$contato->mensagem}}</dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark waves-effect text-left" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         @endforeach
                         </tbody>
                       </table>

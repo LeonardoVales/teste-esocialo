@@ -29,13 +29,13 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Nome</label>
-                                <input type="text" name="nome" class="form-control">
+                                <input type="text" name="nome" class="form-control" required>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="">E-Mail</label>
-                                <input type="text" name="email" class="form-control">
+                                <input type="text" name="email" onblur="validarEmail(this)" class="form-control email" required>
                             </div>
                         </div>
                     </div>
@@ -44,14 +44,14 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Telefone</label>
-                                <input type="text" name="telefone" class="form-control">
+                                <input type="text" name="telefone" class="form-control telefone" required>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Arquivo</label>
                                 <div class="input-group mb-3">
-                                    <input type="file" name="arquivo"  id="gif_exercicio" class="form-control-file" >
+                                    <input type="file" name="arquivo" onchange="checkValidFile()" id="arquivo" class="form-control-file" required>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Mensagem</label>
-                                <textarea class="form-control" name="mensagem" rows="3"></textarea>
+                                <textarea class="form-control" name="mensagem" rows="3" required></textarea>
                             </div>
                         </div>
                     </div>

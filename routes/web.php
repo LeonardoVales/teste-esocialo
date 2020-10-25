@@ -23,3 +23,4 @@ Route::post('/contato-save', 'ContatoController@save')->name('save-contato');
 Route::get('/contato-delete/{id_contato}', 'ContatoController@delete')->name('delete-contato');
 Route::get('/contato-show/{id_contato}', 'ContatoController@show')->name('show-contato');
 Route::put('/contato-update/{id_contato}', 'ContatoController@update')->name('update-contato');
+

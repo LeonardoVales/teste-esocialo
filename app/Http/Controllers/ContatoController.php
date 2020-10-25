@@ -53,6 +53,8 @@ class ContatoController extends Controller
     public function update($id_contato, Request $request)
     {
         $this->contato->update($id_contato, $request);
+
+        return redirect()->route('lista-contatos')->with('success', 'Contato alterado com sucesso');
     }
 
 

@@ -25,6 +25,7 @@
 
                 <form method="post" action="{{route('update-contato', ['id_contato' => $contato->id])}}">
                     {{csrf_field()}}
+                    {{method_field('PUT')}}
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
@@ -35,7 +36,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="">E-Mail</label>
-                                <input type="text" name="email" value="{{$contato->email}}" class="form-control">
+                                <input type="text" name="email" value="{{$contato->email}}" class="form-control email">
                             </div>
                         </div>
                     </div>
@@ -44,7 +45,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Telefone</label>
-                                <input type="text" name="telefone" value="{{$contato->telefone}}" class="form-control">
+                                <input type="text" name="telefone" value="{{$contato->telefone}}" class="form-control telefone">
                             </div>
                         </div>
                         {{-- aqui viria o arquivo --}}
