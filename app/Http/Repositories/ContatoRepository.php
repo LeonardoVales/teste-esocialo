@@ -28,7 +28,8 @@ class ContatoRepository implements IContatoRepositoryInterface
             ]);
 
         } catch(\Exception $e) {
-            dd($e->getMessage());
+            return redirect()->route('lista-contados')
+            ->with('error','Erro ao enviar contato - '.$e->getMessage());
         }
     }
 
@@ -41,7 +42,8 @@ class ContatoRepository implements IContatoRepositoryInterface
 
             return $upload;
         } catch(\Exception $e) {
-            dd($e->geMessage());
+            return redirect()->route('lista-contados')
+            ->with('error','Erro ao realizar upload do arquivo - '.$e->getMessage());
         }
 
     }
@@ -56,7 +58,8 @@ class ContatoRepository implements IContatoRepositoryInterface
         try {
             return Contato::destroy($id_contato);
         } catch(\Exception $e) {
-            dd($e->getMessage());
+            return redirect()->route('lista-contados')
+            ->with('error','Erro remover contato - '.$e->getMessage());
         }
     }
 
@@ -77,7 +80,8 @@ class ContatoRepository implements IContatoRepositoryInterface
 
                 return $contato->update($dataUpdate);
             } catch(\Exception $e) {
-                dd($e->getMessage());
+                return redirect()->route('lista-contados')
+                ->with('error','Erro atualizar o contato - '.$e->getMessage());
             }
         }
     }
