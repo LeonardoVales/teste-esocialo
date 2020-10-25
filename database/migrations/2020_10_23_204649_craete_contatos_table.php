@@ -19,7 +19,7 @@ class CraeteContatosTable extends Migration
             $table->string('email', 50);
             $table->string('telefone', 20);
             $table->longText('mensagem');
-            $table->string('caminho_arquivo', 50);
+            $table->string('caminho_arquivo', 100);
             $table->string('ip', 20);
             $table->timestamps();
         });

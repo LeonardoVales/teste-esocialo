@@ -13,4 +13,6 @@ interface IContatoRepositoryInterface
     public function getById($id_contato);
 
     public function update($id_contato, array $data);
+
+    public function uploadFile(array $file);
 }

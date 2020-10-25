@@ -23,7 +23,7 @@
         <div class="card">
             <div class="card-body">
 
-                <form method="post" action="{{route('save-contato')}}">
+                <form method="post" action="{{route('save-contato')}}" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="row">
                         <div class="col">
