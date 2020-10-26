@@ -7,53 +7,46 @@ Instruções para rodar o teste:
 ```
 git clone https://github.com/LeonardoVales/teste-esocialo.git teste_esocial
 ```
-
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2 - Rodar o composer para instalar as dependências
+```
+composer install
+```
+3 - Renomeie o arquivo .env.example para .env
+4 - Crie um banco de dados (aqui eu usei mysql).
+5 - Após criar o banco de dados, configure a conexão com o banco no arquivo .env
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+6 - Executar a migration da tabela de contatos
+```
+php artisan migrate
+```
+7 - Criar o link simbólico para o upload de arquivo. 
+```
+php artisan storage:link
+```
+8 - Configuração do envio de email. Aqui eu usei o próprio gmail para fazer o envio de email.
+Caso for utilizar o gmail, algumas configurações devem ser feitas.
+[Este link ensina a fazer essas configuras: (https://medium.com/graymatrix/using-gmail-smtp-server-to-send-email-in-laravel-91c0800f9662)]
+Eu já deixei mais ou menos configurado no arquivo .env o envio de email.
+Só precisa colocar o email e a senha do app da conta do gmail.
+```
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=465
+MAIL_USERNAME=seu_email_do_gmail
+MAIL_PASSWORD=sua_senha_app_do_gmail
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=seu_email_do_gmail
+MAIL_FROM_NAME="${APP_NAME}"
+```
+10 - O projeto pode ser executado apenas com o php artisan serve, ou em algum servidor como o apache.
+11 - Se caso der o erro "No application encryption key has been specified.", basta rodar o comando abaixo
+```
+php artisan key:generate
+```
