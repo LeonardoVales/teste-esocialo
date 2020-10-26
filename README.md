@@ -54,3 +54,11 @@ php artisan key:generate
 
 Obs: As validações de email, telefone e upload do arquivo estão sendo feitas no frontend.
 Essas validações estão em public/bibliotecas/scripts/scripts.js
+
+
+![img_01](https://user-images.githubusercontent.com/23103214/97129980-f6ae2e00-171e-11eb-9b65-c32a2be1f2f7.png)
+![img_02](https://user-images.githubusercontent.com/23103214/97130016-088fd100-171f-11eb-9fea-24d743235639.png)
+![img_03](https://user-images.githubusercontent.com/23103214/97130020-0af22b00-171f-11eb-96b9-d0728c08689e.png)
+![img_04](https://user-images.githubusercontent.com/23103214/97130026-0d548500-171f-11eb-872d-eadee53c3949.png)
+![img_05](https://user-images.githubusercontent.com/23103214/97130033-147b9300-171f-11eb-9c99-c3a19da86dec.png)
+![img_06](https://user-images.githubusercontent.com/23103214/97130036-16455680-171f-11eb-8354-09b815055cb4.png)
