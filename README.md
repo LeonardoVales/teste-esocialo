@@ -50,3 +50,7 @@ MAIL_FROM_NAME="${APP_NAME}"
 ```
 php artisan key:generate
 ```
+
+
+Obs: As validações de email, telefone e upload do arquivo estão sendo feitas no frontend.
+Essas validações estão em public/bibliotecas/scripts/scripts.js
